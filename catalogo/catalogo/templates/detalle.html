@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block titulo %}{{ plato.nombre }}{% endblock %}
+
+{% block contenido %}
+    <article>
+        <h2>{{ plato.nombre }}</h2>
+
+        <p>Categoría: {{ plato.categoria.nombre }}</p>
+        <p>{{ plato.descripcion }}</p>
+        <p>Precio: $ {{ plato.precio }} CLP</p>
+    </article>
+
+    {% url 'catalogo:inicio' %}
+        Volver a la carta
+    </a>
+{% endblock %}

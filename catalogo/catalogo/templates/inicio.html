@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block titulo %}Nuestra carta{% endblock %}
+
+{% block contenido %}
+    <h2>Nuestra carta</h2>
+
+    <ul>
+        {% for p in platos %}
+            <li>
+                <h3>
+                    <a href="{% url 'catalogo:detalle' p.id %}">
+                        {{ p.nombre }}
+                    </a>
+                </h3>
+
+                <p>Categoría: {{ p.categoria.nombre }}</p>
+                <p>{{ p.descripcion }}</p>
+                <p>Precio: $ {{ p.precio }} CLP</p>
+            </li>
+        {% empty %}
+            <li>No hay platos disponibles.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

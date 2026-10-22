@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block titulo %}Restaurante{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Restaurante</h1>
+
+        <nav>
+            {% url 'catalogo:inicio' %}
+                Ver la carta
+            </a>
+        </nav>
+
+        <hr>
+    </header>
+
+    <main>
+        {% block contenido %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <hr>
+        <p>Catálogo de platos</p>
+    </footer>
+</body>
+</html>
